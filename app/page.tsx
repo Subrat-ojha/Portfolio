@@ -10,6 +10,7 @@ import {
   Work,
 } from "@/components/page-sections";
 import { SectionRail } from "@/components/section-rail";
+import { ScrollFX } from "@/components/scroll-fx";
 import { SiteHeader } from "@/components/site-header";
 import { profile } from "@/config/content";
 
@@ -49,6 +50,7 @@ export default function Home() {
       </main>
 
       <SectionRail />
+      <ScrollFX />
     </>
   );
 }

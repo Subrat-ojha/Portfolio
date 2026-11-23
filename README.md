@@ -66,11 +66,13 @@ app/
 components/
   cinematic-hero.tsx  React wrapper: controls, photo, text reveal
   page-sections.tsx   About / Work / Stack / Experience / Education / Community / Contact
+  section-shell.tsx   per-section observer + animated chapter header
+  words.tsx           splits a heading into revealed words
+  scroll-fx.tsx       feeds scroll position to CSS (ghost numerals, gutters)
   site-header.tsx     appears after the film, with scroll progress
   section-rail.tsx    right-side scrollspy rail
   theme-toggle.tsx    nocturne (default) ↔ daylight
   portrait.tsx        reads the photo added in the hero
-  reveal.tsx          scroll reveal
 lib/
   city-scene.ts     the canvas engine (city, crowd, camera, zoom)
 ```
@@ -82,6 +84,11 @@ lib/
 - **Add your photo** in the hero is stored in `localStorage` (`so:portrait`)
   and drawn as the developer's portrait once the camera is close, then reused
   as the About avatar. It never leaves the browser.
+- The paper page repeats the intro's language on scroll: each section draws its
+  eyebrow rule, surfaces its heading word by word out of blur, drifts an
+  outlined chapter numeral against the scroll, and cascades its body items.
+  One `IntersectionObserver` per section plus one rAF scroll listener; no
+  animation library.
 - **Nocturne** is the default theme; the toggle writes `so:theme` and an inline
   script applies it before first paint so there is no flash.
 - Private work (ShipCommerce, Danni) is marked "Private" instead of linking

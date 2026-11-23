@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <noscript>
-          <style>{`[data-reveal]{opacity:1!important;transform:none!important;filter:none!important}`}</style>
+          <style>{`[data-reveal],.word-reveal .wr,.sec-item,.chip-anim,.bullet-line,.section-rule,.section-topline,.mail-link{opacity:1!important;transform:none!important;filter:none!important}.chapter-ghost{opacity:.22!important;transform:none!important}[data-section] .eyebrow::before{transform:scaleX(1)!important}`}</style>
         </noscript>
         {children}
       </body>
