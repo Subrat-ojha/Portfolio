@@ -36,6 +36,26 @@ All copy and links live in **`config/content.ts`**, taken from
 `public/Subrat_Ojha_Resume.pdf` is served as the "Résumé" link in the contact
 section.
 
+## Deploy (Netlify)
+
+The repo is set up for zero-config Netlify deploys:
+
+1. Netlify → **Add new site → Import an existing project** → pick
+   `Subrat-ojha/Portfolio`.
+2. Netlify reads `netlify.toml`: build `npm run build`, publish `.next`,
+   Node 22 (also pinned in `.nvmrc`).
+
+The OpenNext adapter (`@netlify/plugin-nextjs`) is installed and updated by
+Netlify automatically — deliberately not pinned in `package.json`. No
+environment variables are needed: the site is static, and the résumé PDF is
+served from `public/`.
+
+CLI alternative:
+
+```bash
+npx netlify-cli deploy --build --prod
+```
+
 ## Structure
 
 ```
